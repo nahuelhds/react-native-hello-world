@@ -1,6 +1,5 @@
 // @flow
 import React, {Component} from 'react';
-import Expo from 'expo';
 import {Dimensions, StyleSheet} from 'react-native';
 import {
   Button,
@@ -32,7 +31,11 @@ export default class HelloWorld extends Component {
             <View style={css([styles.content])} padder>
               <Text style={css(styles.subtitle)}>The Hello World App</Text>
               <Text style={css(styles.title)}>nahuelhds</Text>
-              <View style={css([{flex: 1}])}>
+              <View style={css([
+                {
+                  flex: 1
+                }
+              ])}>
                 <View style={css(styles.leadBlock)}>
                   <Text style={css([styles.lead, styles.textCenter])}>
                     Agile developer & Craftperson
@@ -87,27 +90,27 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginTop: 60,
     marginBottom: 10,
-    textAlign: 'center',
+    textAlign: 'center'
   },
   title: {
     // fontFamily: 'Roboto',
     fontSize: 32,
     justifyContent: 'center',
     marginBottom: 15,
-    textAlign: 'center',
+    textAlign: 'center'
   },
   leadBlock: {
     flex: 2,
     textAlign: 'center'
   },
-  lead:{
-    fontSize: 20,
+  lead: {
+    fontSize: 20
   },
   textCenter: {
     textAlign: 'center'
   },
   small: {
-    fontSize: 14,
+    fontSize: 14
   },
   valign: {
     flex: 1,
@@ -116,5 +119,5 @@ const styles = StyleSheet.create({
 })
 
 let css = (styles) => {
-  return StyleSheet.flatten(styles)
+  StyleSheet.flatten(styles)
 }

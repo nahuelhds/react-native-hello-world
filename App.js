@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
     flex: 3
   },
   h1: {
+    // fontFamily: 'Roboto',
     fontSize: 32,
     justifyContent: 'center',
     marginTop: 60,
@@ -68,9 +69,9 @@ let css = (styles) => {
 
 export default class HelloWorld extends Component {
 
-  async componentWillMount() {
-    await Expo.Font.loadAsync({'Roboto': require('native-base/Fonts/Roboto.ttf'), 'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf')});
-  }
+  // async componentWillMount() {
+  //   await Expo.Font.loadAsync({'Roboto': require('native-base/Fonts/Roboto.ttf'), 'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf')});
+  // }
 
   render() {
     return (

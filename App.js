@@ -36,13 +36,18 @@ const styles = StyleSheet.create({
   content: {
     flex: 3
   },
-  h1: {
+  subtitle: {
+    fontSize: 16,
+    marginTop: 60,
+    marginBottom: 10,
+    textAlign: 'center',
+  },
+  title: {
     // fontFamily: 'Roboto',
     fontSize: 32,
     justifyContent: 'center',
-    marginTop: 60,
     marginBottom: 15,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   leadBlock: {
     flex: 2,
@@ -86,7 +91,8 @@ export default class HelloWorld extends Component {
               }}/>
             </View>
             <View style={css([styles.content])} padder>
-              <Text style={css(styles.h1)}>nahuelhds</Text>
+              <Text style={css(styles.subtitle)}>The Hello World App</Text>
+              <Text style={css(styles.title)}>nahuelhds</Text>
               <View style={css([{flex: 1}])}>
                 <View style={css(styles.leadBlock)}>
                   <Text style={css([styles.lead, styles.textCenter])}>

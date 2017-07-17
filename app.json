@@ -1,5 +1,7 @@
 {
   "expo": {
+    "name": "The Hello World App",
+    "slug": "the-hello-world-app",
     "sdkVersion": "18.0.0"
   }
 }

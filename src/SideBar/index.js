@@ -1,52 +1,80 @@
 import React from "react";
-import { AppRegistry, Image, StatusBar } from "react-native";
+import {AppRegistry, Image, StatusBar} from "react-native";
 import {
-  Button,
-  Text,
+  Body,
   Container,
+  Content,
+  Icon,
+  Left,
   List,
   ListItem,
-  Content,
-  Icon
+  Separator,
+  Text,
+  Thumbnail,
+  View
 } from "native-base";
-const routes = ["Home", "Chat", "Profile"];
+
+const routes = [
+  {
+    title: "Home",
+    icon: "home",
+    route: "Home"
+  }, {
+    title: "About me",
+    icon: "person",
+    route: "AboutMe"
+  }, {
+    title: "Contact",
+    icon: "mail",
+    route: "Contact"
+  }
+];
+
 export default class SideBar extends React.Component {
   render() {
     return (
       <Container>
         <Content>
-          <Image
-            source={{
-              uri: "https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/react-navigation/img/drawer-cover.png"
-            }}
-            style={{
-              height: 120,
-              alignSelf: "stretch",
-              justifyContent: "center",
-              alignItems: "center"
-            }}
-          >
-            <Image
-              square
-              style={{ height: 80, width: 70 }}
-              source={{
-                uri: "https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/react-navigation/img/logo.png"
-              }}
-            />
-          </Image>
-          <List
-            dataArray={routes}
-            renderRow={data => {
-              return (
-                <ListItem
-                  button
-                  onPress={() => this.props.navigation.navigate(data)}
-                >
-                  <Text>{data}</Text>
-                </ListItem>
-              );
-            }}
-          />
+          <View style={{
+            height: 200,
+            alignSelf: "stretch",
+            justifyContent: "center",
+            alignItems: "center"
+          }}>
+            <Thumbnail large source={{
+              uri: "http://angular.github.io/react-native-renderer/assets/react.png"
+            }}/>
+            <Text>The Hello World App</Text>
+          </View>
+          <List dataArray={routes} renderRow={(item, arg, index) => {
+            let attr = [];
+            // Si es el ultimo, lo indicamos de dicho modo
+            if(parseInt(index) + 1 == routes.length){
+              attr["last"] = true
+            }
+            return (
+              <ListItem {...attr} icon button onPress={() => this.props.navigation.navigate(item.route)}>
+                <Left>
+                  <Icon name={item.icon}/>
+                </Left>
+                <Body>
+                  <Text>{item.title}</Text>
+                </Body>
+              </ListItem>
+            );
+          }}>
+          </List>
+          <List>
+            <Separator bordered />
+            <ListItem icon last>
+              <Left>
+                <Icon name="information-circle"/>
+              </Left>
+              <Body>
+                <Text>Credits</Text>
+              </Body>
+            </ListItem>
+          </List>
         </Content>
       </Container>
     );

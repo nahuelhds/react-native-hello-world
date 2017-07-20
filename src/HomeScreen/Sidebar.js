@@ -1,5 +1,4 @@
 import React from "react";
-import {AppRegistry, Image, StatusBar} from "react-native";
 import {
   Body,
   Container,
@@ -13,22 +12,6 @@ import {
   Thumbnail,
   View
 } from "native-base";
-
-const routes = [
-  {
-    title: "Home",
-    icon: "home",
-    route: "Home"
-  }, {
-    title: "About me",
-    icon: "person",
-    route: "AboutMe"
-  }, {
-    title: "Contact",
-    icon: "mail",
-    route: "Contact"
-  }
-];
 
 export default class SideBar extends React.Component {
   render() {
@@ -46,10 +29,10 @@ export default class SideBar extends React.Component {
             }}/>
             <Text>The Hello World App</Text>
           </View>
-          <List dataArray={routes} renderRow={(item, arg, index) => {
-            let attr = [];
+          <List dataArray={this.props.routes} renderRow={(item, arg, index) => {
+            let attr = []
             // Si es el ultimo, lo indicamos de dicho modo
-            if(parseInt(index) + 1 == routes.length){
+            if(parseInt(index) + 1 == this.props.routes.length){
               attr["last"] = true
             }
             return (

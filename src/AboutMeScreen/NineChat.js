@@ -1,11 +1,8 @@
 import React from "react";
-import { AppRegistry, View, StatusBar } from "react-native";
 import {
   Button,
   Text,
   Container,
-  Card,
-  CardItem,
   Body,
   Content,
   Header,
@@ -14,12 +11,7 @@ import {
   Icon,
   Title,
   Input,
-  InputGroup,
   Item,
-  Tab,
-  Tabs,
-  Footer,
-  FooterTab,
   Label
 } from "native-base";
 

@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import Expo from "expo";
-import Router from "./src/Router";
+import HomeScreen from "./src/HomeScreen/index";
 
 export default class TheHelloWordApp extends Component {
   constructor() {
@@ -11,8 +11,8 @@ export default class TheHelloWordApp extends Component {
   }
   async componentWillMount() {
     const fonts = {
-      'Roboto': require('native-base/Fonts/Roboto.ttf'),
-      'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf'),
+      // 'Roboto': require('native-base/Fonts/Roboto.ttf'),
+      // 'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf'),
       'Ionicons': require('native-base/Fonts/Ionicons.ttf')
     }
     await Expo.Font.loadAsync(fonts);
@@ -22,6 +22,6 @@ export default class TheHelloWordApp extends Component {
     if (!this.state.isReady) {
       return <Expo.AppLoading/>;
     }
-    return <Router/>;
+    return <HomeScreen/>;
   }
 }

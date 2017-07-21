@@ -1,5 +1,5 @@
-import React from "react";
-
+import React from "react"
+import {DrawerNavigator} from "react-navigation"
 import {
   Body,
   Container,
@@ -12,13 +12,11 @@ import {
   Text,
   Thumbnail,
   View
-} from "native-base";
+} from "native-base"
 
-import {DrawerNavigator} from "react-navigation";
-
-import {styles, css} from "./styles";
-import HomeScreen from "../HomeScreen/index";
-import AboutMeScreen from "../AboutMeScreen/index";
+import {styles, css} from "./styles"
+import HomeScreen from "../HomeScreen/index"
+import AboutMeScreen from "../AboutMeScreen/index"
 // import Profile from "./ProfileScreen/index";
 
 const routes = [

@@ -17,17 +17,13 @@ import Personal from "./Personal"
 // import SocialScreen from "./SocialScreen";
 
 const routes = [{
-  key: "Personal",
-  icon: "bowtie",
+  title: "Me",
+  icon: "person",
   route: "Personal",
 }, {
-  key: "My Carreer",
-  icon: "bowtie",
+  title: "Carreer",
+  icon: "code",
   route: "Carreer",
-}, {
-  key: "Social",
-  icon: "bowtie",
-  route: "Social",
 }]
 
 const AboutMeScreen = TabNavigator({
@@ -45,9 +41,9 @@ const AboutMeScreen = TabNavigator({
   tabBarComponent: props => (
     <Footer>
       <FooterTab>
-        {routes.map((item) => <Button key={item.key} vertical active={props.navigationState.index === 0} onPress={() => props.navigation.navigate(item.route)}>
+        {routes.map((item) => <Button key={item.title} vertical active={props.navigationState.index === 0} onPress={() => props.navigation.navigate(item.route)}>
           <Icon name={item.icon}/>
-          <Text>{item.key}</Text>
+          <Text>{item.title}</Text>
         </Button>)}
       </FooterTab>
     </Footer>

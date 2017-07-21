@@ -9,7 +9,6 @@ import {
   List,
   ListItem,
   Separator,
-  StyleSheet,
   Text,
   Thumbnail,
   View

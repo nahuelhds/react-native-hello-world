@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     textAlign: 'center'
   },
-  textContainer: {
+  fullHeight: {
     flex: 1
   },
   leadBlock: {

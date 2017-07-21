@@ -1,34 +1,49 @@
-import React from "react";
-import {DrawerNavigator} from "react-navigation";
+import React, {Component} from 'react';
 
-import HomeScreen from "./HomeScreen";
-import AboutMeScreen from "../AboutMeScreen/index";
-// import Profile from "./ProfileScreen/index";
-import Sidebar from "./Sidebar";
+import {
+  Button,
+  Container,
+  Text,
+  Thumbnail,
+  View
+} from 'native-base';
 
-const routes = {
-  Home: {
-    screen: HomeScreen,
-    title: "Home",
-    icon: "home",
-    route: "Home",
-  },
-  AboutMe: {
-    screen: AboutMeScreen,
-    title: "About me",
-    icon: "person",
-    route: "AboutMe",
-  },
-  // ContactScreen: {
-  //   screen: ContactScreen,
-  //   title: "Contact",
-  //   icon: "mail",
-  //   route: "ContactScreen"
-  // },
+import {styles, css} from './styles';
+
+export default class HomeScreen extends Component {
+  render() {
+    return (
+      <Container>
+        <View style={{
+          flex: 1
+        }}>
+          <View style={css(styles.header)}>
+            <Thumbnail style={css(styles.avatar)} large source={{
+              uri: 'http://gravatar.com/avatar/41b64c5cb658355a506deba471262427'
+            }}/>
+          </View>
+          <View style={css([styles.content])} padder>
+            <Text style={css(styles.subtitle)}>The Hello World App</Text>
+            <Text style={css(styles.title)}>nahuelhds</Text>
+            <View style={css(styles.textContainer)}>
+              <View style={css(styles.leadBlock)}>
+                <Text style={css([styles.lead, styles.textCenter])}>
+                  Agile developer / Craftperson
+                </Text>
+                <Text style={css([styles.lead, styles.textCenter])}>
+                  @ CristalMedia
+                </Text>
+              </View>
+              <View style={css([styles.valign])}>
+                <Text style={css([styles.textCenter, styles.small])}>This app was developed for learning about React Native and its libraries</Text>
+              </View>
+            </View>
+          </View>
+          <Button full primary onPress={() => this.props.navigation.navigate("DrawerOpen")}>
+            <Text>Begin</Text>
+          </Button>
+        </View>
+      </Container>
+    )
+  }
 }
-
-export default DrawerNavigator(routes, {
-  contentComponent: props => <Sidebar {...props}
-    // Le envio las rutas de forma dinamica
-    routes={Object.values(routes)}/>
-});

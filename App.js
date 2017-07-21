@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import Expo from "expo";
-import HomeScreen from "./src/HomeScreen/index";
+import MainScreen from "./src/MainScreen/index";
 
 export default class TheHelloWordApp extends Component {
   constructor() {
@@ -22,6 +22,6 @@ export default class TheHelloWordApp extends Component {
     if (!this.state.isReady) {
       return <Expo.AppLoading/>;
     }
-    return <HomeScreen/>;
+    return <MainScreen/>;
   }
 }

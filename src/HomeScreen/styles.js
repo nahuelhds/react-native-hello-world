@@ -1,20 +1,7 @@
-import {Dimensions, StyleSheet} from 'react-native';
+import {StyleSheet} from 'react-native';
 
-const {height: screenHeight} = Dimensions.get('window')
+const css = StyleSheet.flatten
 const styles = StyleSheet.create({
-  bgLight: {
-    backgroundColor: 'cornflowerblue'
-  },
-  bg: {
-    backgroundColor: 'steelblue'
-  },
-  bgDark: {
-    backgroundColor: 'darkslateblue'
-  },
-  fullScreen: {
-    flex: 1,
-    height: screenHeight
-  },
   header: {
     flex: 1,
     alignItems: "center",
@@ -60,7 +47,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   }
 })
-
-const css = StyleSheet.flatten
 
 export {styles, css}

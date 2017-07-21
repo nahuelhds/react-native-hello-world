@@ -1,8 +1,8 @@
-import React from "react";
-import {TabNavigator} from "react-navigation";
-import {Button, Text, Icon, Footer, FooterTab} from "native-base";
+import React from "react"
+import {TabNavigator} from "react-navigation"
+import {Button, Text, Icon, Footer, FooterTab} from "native-base"
 
-import Personal from "./Personal";
+import Personal from "./Personal"
 // import CarreerScreen from "./CarreerScreen";
 // import SocialScreen from "./SocialScreen";
 

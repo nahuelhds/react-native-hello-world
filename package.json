@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^5.0.0",
+    "eslint": "^4.3.0",
     "expo": "^18.0.3",
     "native-base": "2.2.0",
     "react": "16.0.0-alpha.12",

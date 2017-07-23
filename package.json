@@ -4,6 +4,7 @@
   "private": true,
   "devDependencies": {
     "babel-eslint": "^7.2.3",
+    "eslint": "^4.3.0",
     "eslint-config-airbnb": "^15.0.2",
     "eslint-plugin-flowtype": "^2.35.0",
     "eslint-plugin-import": "^2.7.0",
@@ -30,7 +31,6 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^5.0.0",
-    "eslint": "^4.3.0",
     "expo": "^18.0.3",
     "native-base": "2.2.0",
     "react": "16.0.0-alpha.12",

@@ -1,2 +1,8 @@
-[core]
-autocrlf = false
+*.js    text
+*.json  text
+*.md    text
+
+*.png   binary
+*.gif   binary
+*.jpg   binary
+*.jpeg  binary

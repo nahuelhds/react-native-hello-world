@@ -1,9 +1,11 @@
 {
   "presets": ["babel-preset-expo"],
-  "sourceMaps": true,
   "env": {
     "development": {
-      "plugins": ["transform-react-jsx-source"]
+      "retainLines": true,
+      "plugins": [
+        "transform-react-jsx-source"
+      ]
     }
   }
 }

@@ -1,0 +1,10 @@
+{
+    "react-native":{
+        "packager":{
+            "port": 19001
+        }
+    },
+    "flow.useNPMPackagedFlow": true,
+    "javascript.validate.enable": false,
+    "eslint.trace.server": "off"
+}

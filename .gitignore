@@ -1,4 +1,5 @@
 .expo/
-.vscode/.react
+.vscode/*
+!.vscode/settings.json
 node_modules/
 npm-debug.*

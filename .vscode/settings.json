@@ -1,10 +1,11 @@
 {
+    "eslint.trace.server": "off",
+    "flow.runOnEdit": false,
+    "flow.useNPMPackagedFlow": true,
+    "javascript.validate.enable": false,
     "react-native":{
         "packager":{
             "port": 19001
         }
-    },
-    "flow.useNPMPackagedFlow": true,
-    "javascript.validate.enable": false,
-    "eslint.trace.server": "off"
+    }
 }

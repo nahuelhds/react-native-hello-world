@@ -80,7 +80,7 @@ For debugging to be possible you have to have the "React Native" configuration n
 
 Then:
 
-1. If you have "Hot reloading enabled" disable it.
+1. If you have "Hot reloading" enabled, disable it.
 1. `Ctrl + Shift + P`
 1. `> React Native: Start Exponent Packager`
 1. On the debugging tab, select "Attach to pacakger"

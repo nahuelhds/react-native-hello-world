@@ -1,0 +1,5 @@
+{
+    "entryPointFilename": "index.android.js",
+    "entryPointComponent": "hello-world",
+    "overwriteExpJson": false
+}

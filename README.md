@@ -45,8 +45,6 @@ What does they mean?
 * **lanType** so the URL given is the machine IP.
 * **sourceMaps** is vital for Hot Reload and Debugging to work
 
-Finally, 
-
 ## Start developing
 
 1. `Ctrl + Shift + P`

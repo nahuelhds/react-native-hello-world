@@ -1,3 +1,4 @@
-node_modules/
 .expo/
+.vscode/.react
+node_modules/
 npm-debug.*

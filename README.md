@@ -52,6 +52,10 @@ What does they mean?
 1. Wait for packager initialization and QR Code tab to open
 1. Scan QA with Expo app on the device.
 
+### Babel
+
+If you do modifications to Babel config `.babelrc`, then you need to clear the packager cache and then restart the project.
+
 ## Debugging
 
 > **Tip:** Remote debugging works best with Live reload. Hot reloading gives too much troubles and RSOF (Red Screen of Death).
@@ -91,3 +95,4 @@ Then:
 
 * If app initialization hangs (loading forever) and it doesn't start remove node_modules and run `yarn`.
 * If attach debugger doesn't respond, just restart VSCode.
+* [resolve] xdl module not found => Use Expo XDE to launch the project, then debug as usual.

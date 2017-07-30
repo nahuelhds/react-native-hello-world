@@ -1,8 +1,9 @@
 // @flow
 import React, { Component } from 'react';
 import Expo from 'expo';
-import I18n from './src/I18n/index';
-import MainRouter from './src/router/Sidebar';
+
+import I18n from 'lang/index';
+import MainRouter from 'router/Sidebar';
 
 export default class TheHelloWordApp extends Component {
   state: {

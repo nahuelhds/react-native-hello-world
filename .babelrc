@@ -1,5 +1,7 @@
 {
-  "presets": ["babel-preset-expo"],
+  "presets": [
+    "babel-preset-expo"
+  ],
   "sourceMaps": true,
   "env": {
     "development": {
@@ -8,5 +10,18 @@
         "transform-react-jsx-source"
       ]
     }
-  }
+  },
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./src"
+        ],
+        "alias": {
+          "@img": "./assets/img"
+        }
+      }
+    ]
+  ]
 }

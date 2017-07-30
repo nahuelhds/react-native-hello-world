@@ -1,28 +1,36 @@
 // @flow
 import React, { Component } from 'react';
 import Expo from 'expo';
-import MainScreen from './src/MainScreen/index';
+import I18n from './src/I18n/index';
+import MainRouter from './src/router/Sidebar';
 
 export default class TheHelloWordApp extends Component {
+  state: {
+    isReady: boolean
+  };
+
   constructor() {
     super();
     this.state = {
-      isReady: false,
+      isReady: false
     };
   }
+
   async componentWillMount() {
-    const fonts = {
+    // Fuentes
+    await Expo.Font.loadAsync({
       Roboto: require('native-base/Fonts/Roboto.ttf'),
       Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
       Ionicons: require('native-base/Fonts/Ionicons.ttf'),
-    };
-    await Expo.Font.loadAsync(fonts);
+    });
+    await I18n.initAsync();
     this.setState({ isReady: true });
   }
+
   render() {
     if (!this.state.isReady) {
       return <Expo.AppLoading />;
     }
-    return <MainScreen />;
+    return <MainRouter />;
   }
 }

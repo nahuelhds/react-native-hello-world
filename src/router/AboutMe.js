@@ -12,7 +12,7 @@ import {
   FooterTab,
 } from "native-base"
 
-import Personal from '../screen/AboutMe'
+import Personal from 'screen/AboutMe'
 // import CarreerScreen from "./CarreerScreen";
 // import SocialScreen from "./SocialScreen";
 

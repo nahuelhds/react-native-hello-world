@@ -1,3 +1,4 @@
+// @flow
 import React from "react"
 import { StyleSheet } from "react-native"
 import { DrawerNavigator } from "react-navigation"
@@ -15,9 +16,9 @@ import {
   View
 } from "native-base"
 
-import lang from '../I18n/index'
-import HomeScreen from "../screen/Home"
-import AboutMeRouter from '../router/AboutMe';
+import lang from 'lang/index'
+import AboutMeRouter from 'router/AboutMe';
+import HomeScreen from "screen/Home"
 // import Profile from "./ProfileScreen/index";
 
 const Sidebar = DrawerNavigator({
@@ -61,7 +62,7 @@ const Sidebar = DrawerNavigator({
         <Container>
           <Content>
             <View style={css(styles.sidebar)}>
-              <Thumbnail large source={require('../../assets/img/logo.png')} />
+              <Thumbnail large source={require('@img/logo.png')} />
               <Text>{lang.t('app.name')}</Text>
             </View>
             <List dataArray={routes} renderRow={renderRow}></List>

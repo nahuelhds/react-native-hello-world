@@ -3,5 +3,8 @@
     "flow.runOnEdit": false,
     "flow.useNPMPackagedFlow": true,
     "javascript.validate.enable": false,
-    "react-native.packager.port": 19001
+    "react-native.packager.port": 19001,
+    "files.exclude": {
+      "node_modules": true
+    }
 }

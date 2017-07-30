@@ -2,7 +2,6 @@
     "compilerOptions": {
         "noLib": true,
         "jsx": "react-native",
-        "allowJs": true,
         "allowSyntheticDefaultImports": true
     },
     "exclude": [

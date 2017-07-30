@@ -12,19 +12,10 @@ import {
   FooterTab,
 } from "native-base"
 
-import Personal from '../screen/AboutMe/index'
+import Personal from '../screen/AboutMe'
 // import CarreerScreen from "./CarreerScreen";
 // import SocialScreen from "./SocialScreen";
 
-const routes = [{
-  title: "Me",
-  icon: "person",
-  route: "Personal",
-}, {
-  title: "Carreer",
-  icon: "code",
-  route: "Carreer",
-}]
 
 const AboutMeScreen = TabNavigator({
   Personal: {
@@ -37,17 +28,35 @@ const AboutMeScreen = TabNavigator({
   //   screen: NineChat
   // },
 }, {
-  tabBarPosition: "bottom",
-  tabBarComponent: props => (
-    <Footer>
-      <FooterTab>
-        {routes.map((item) => <Button key={item.title} vertical active={props.navigationState.index === 0} onPress={() => props.navigation.navigate(item.route)}>
-          <Icon name={item.icon}/>
-          <Text>{item.title}</Text>
-        </Button>)}
-      </FooterTab>
-    </Footer>
-  )
-})
+    tabBarPosition: "bottom",
+    tabBarComponent: props => {
+      const routes = [
+        {
+          title: "Me",
+          icon: "person",
+          route: "Personal",
+        }, {
+          title: "Carreer",
+          icon: "code",
+          route: "Carreer",
+        }
+      ]
+      return (
+        <Footer>
+          <FooterTab>
+            {routes.map((item) =>
+              <Button
+                key={item.title}
+                vertical
+                active={props.navigationState.index === 0}
+                onPress={() => props.navigation.navigate(item.route)}>
+                <Icon name={item.icon} />
+                <Text>{item.title}</Text>
+              </Button>)}
+          </FooterTab>
+        </Footer>
+      )
+    }
+  })
 
 export default AboutMeScreen;

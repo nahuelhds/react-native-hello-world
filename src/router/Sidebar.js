@@ -16,7 +16,7 @@ import {
 } from "native-base"
 
 import lang from '../I18n/index'
-import HomeScreen from "../screen/Home/index"
+import HomeScreen from "../screen/Home"
 import AboutMeRouter from '../router/AboutMe';
 // import Profile from "./ProfileScreen/index";
 
@@ -38,13 +38,7 @@ const Sidebar = DrawerNavigator({
           title: lang.t("About me"),
           icon: "person",
           route: "AboutMe"
-        },
-        // ContactScreen: {
-        //   screen: ContactScreen,
-        //   title: "Contact",
-        //   icon: "mail",
-        //   route: "ContactScreen"
-        // },
+        }
       ];
       const renderRow = (item, arg, index) => {
         let attr = []

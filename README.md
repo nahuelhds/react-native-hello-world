@@ -1,6 +1,7 @@
 # React Native Hello World
 
 This is my first React Native app. Built for learning purposes.
+
 You can check it out here https://expo.io/@nahuelhds/the-hello-world-app
 
 ## Stack used

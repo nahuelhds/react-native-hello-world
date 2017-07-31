@@ -61,10 +61,10 @@ unsafe.enable_getters_and_setters=true
 
 ; Project's options
 ; Look under "node_modules" and "src" folders
-module.system.node.resolve_dirname=node_modules
 module.system.node.resolve_dirname=src
 ; Aliases
-module.name_mapper='^\@img\/\(.*\)$' -> '<PROJECT_ROOT>/assets/img/\1' ; @img => /assets/img
+; @img => /assets/img
+module.name_mapper='^@img\/\(.*\)$' -> '<PROJECT_ROOT>/assets/img/\1'
 
 [version]
 ^0.45.0

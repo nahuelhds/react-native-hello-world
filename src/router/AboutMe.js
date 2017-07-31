@@ -1,3 +1,4 @@
+// @flow
 import React from "react"
 
 import {
@@ -12,35 +13,33 @@ import {
   FooterTab,
 } from "native-base"
 
-import Personal from 'screen/AboutMe'
-// import CarreerScreen from "./CarreerScreen";
-// import SocialScreen from "./SocialScreen";
+import lang from "lang/main"
 
+import ProfileScreen from 'screen/Profile'
+import SkillsScreen from 'screen/Skills'
 
-const AboutMeScreen = TabNavigator({
-  Personal: {
-    screen: Personal
+const AboutMeRouter = TabNavigator({
+  Profile: {
+    screen: ProfileScreen
   },
-  // JadeChat: {
-  //   screen: JadeChat
-  // },
-  // NineChat: {
-  //   screen: NineChat
-  // },
+  Skills: {
+    screen: SkillsScreen
+  }
 }, {
     tabBarPosition: "bottom",
     tabBarComponent: props => {
       const routes = [
         {
-          title: "Me",
+          title: lang.t('Profile'),
           icon: "person",
-          route: "Personal",
+          route: "Profile",
         }, {
-          title: "Carreer",
+          title: lang.t('Skills'),
           icon: "code",
-          route: "Carreer",
+          route: "Skills",
         }
       ]
+      let i: number = 0
       return (
         <Footer>
           <FooterTab>
@@ -48,7 +47,7 @@ const AboutMeScreen = TabNavigator({
               <Button
                 key={item.title}
                 vertical
-                active={props.navigationState.index === 0}
+                active={props.navigationState.index === i++}
                 onPress={() => props.navigation.navigate(item.route)}>
                 <Icon name={item.icon} />
                 <Text>{item.title}</Text>
@@ -59,4 +58,4 @@ const AboutMeScreen = TabNavigator({
     }
   })
 
-export default AboutMeScreen;
+export default AboutMeRouter

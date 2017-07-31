@@ -3,7 +3,7 @@ import React from 'react'
 import { StyleSheet } from 'react-native'
 import { Button, Text, Thumbnail, View } from 'native-base'
 
-import lang from 'lang/index'
+import lang from 'lang/main'
 
 const screen = class HomeScreen extends React.Component {
   render() {

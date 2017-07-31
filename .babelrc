@@ -19,7 +19,7 @@
           "./src"
         ],
         "alias": {
-          "@img": "./assets/img"
+          "img": "./assets/img"
         }
       }
     ]

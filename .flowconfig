@@ -13,25 +13,44 @@ node_modules/react-native/Libraries/react-native/react-native-interface.js
 node_modules/react-native/flow
 
 [options]
-; Expo
+; React Native
 emoji=true
-experimental.strict_type_args=true
+
 module.system=haste
+
 munge_underscores=true
+
+suppress_type=$FlowIssue
+suppress_type=$FlowFixMe
+
+suppress_comment=\\(.\\|\n\\)*\\$FlowIssue
+suppress_comment=\\(.\\|\n\\)*\\$FlowFixMe
+
 unsafe.enable_getters_and_setters=true
 
 ; App config
 log.file=<PROJECT_ROOT>/flow/flow.log
-suppress_comment= \\(.\\|\n\\)*\\$FlowFixMe
-suppress_type=$FlowTODO
 
 ; Maps
 ; root => ./src
 module.system.node.resolve_dirname=src
-; @img => /assets/img
-module.name_mapper='^@img\/\(.*\)$' -> '<PROJECT_ROOT>/assets/img/\1'
-module.name_mapper='^[./a-zA-Z0-9$_-]+\.\(bmp\|gif\|jpg\|jpeg\|png\|psd\|svg\|webp\|m4v\|mov\|mp4\|mpeg\|mpg\|webm\|aac\|aiff\|caf\|m4a\|mp3\|wav\|html\|pdf\)$' -> 'RelativeImageStub'
-
+; Assets
+module.name_mapper.extension='aac' -> '<PROJECT_ROOT>/flow/AssetStub.js'
+module.name_mapper.extension='gif' -> '<PROJECT_ROOT>/flow/AssetStub.js'
+module.name_mapper.extension='html' -> '<PROJECT_ROOT>/flow/AssetStub.js'
+module.name_mapper.extension='jpeg' -> '<PROJECT_ROOT>/flow/AssetStub.js'
+module.name_mapper.extension='jpg' -> '<PROJECT_ROOT>/flow/AssetStub.js'
+module.name_mapper.extension='m4a' -> '<PROJECT_ROOT>/flow/AssetStub.js'
+module.name_mapper.extension='mov' -> '<PROJECT_ROOT>/flow/AssetStub.js'
+module.name_mapper.extension='mp3' -> '<PROJECT_ROOT>/flow/AssetStub.js'
+module.name_mapper.extension='mpeg' -> '<PROJECT_ROOT>/flow/AssetStub.js'
+module.name_mapper.extension='mpg' -> '<PROJECT_ROOT>/flow/AssetStub.js'
+module.name_mapper.extension='png' -> '<PROJECT_ROOT>/flow/AssetStub.js'
+module.name_mapper.extension='psd' -> '<PROJECT_ROOT>/flow/AssetStub.js'
+module.name_mapper.extension='svg' -> '<PROJECT_ROOT>/flow/AssetStub.js'
+module.name_mapper.extension='ttf' -> '<PROJECT_ROOT>/flow/AssetStub.js'
+module.name_mapper.extension='wav' -> '<PROJECT_ROOT>/flow/AssetStub.js'
+module.name_mapper.extension='webm' -> '<PROJECT_ROOT>/flow/AssetStub.js'
 
 [version]
 ^0.45.0

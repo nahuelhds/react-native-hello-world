@@ -62,7 +62,7 @@ const Sidebar = DrawerNavigator({
         <Container>
           <Content>
             <View style={css(styles.sidebar)}>
-              <Thumbnail large source={require('@img/logo.png')} />
+              <Thumbnail large source={require('img/logo.png')} />
               <Text>{lang.t('app.name')}</Text>
             </View>
             <List dataArray={routes} renderRow={renderRow}></List>

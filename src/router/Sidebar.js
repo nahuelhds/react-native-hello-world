@@ -42,10 +42,10 @@ const Sidebar = DrawerNavigator({
         }
       ];
       const renderRow = (item, arg, index) => {
-        let attr = []
+        let attr = {}
         // Si es el ultimo, lo indicamos de dicho modo
         if (parseInt(index) + 1 == routes.length) {
-          attr["last"] = true
+          attr.last = true
         }
         return (
           <ListItem {...attr} icon button onPress={() => props.navigation.navigate(item.route)}>

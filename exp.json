@@ -4,5 +4,6 @@
     "sdkVersion": "18.0.0",
     "packagerOpts": {
       "assetExts": ["ttf"]
-    }
+    },
+    "privacy": "unlisted"
 }

@@ -17,6 +17,7 @@ export default class TheHelloWordApp extends Component {
     };
   }
 
+  // $FlowFixMe: Promise error
   async componentWillMount() {
     // Fuentes
     await Expo.Font.loadAsync({

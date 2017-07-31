@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import Expo from 'expo';
 
-import I18n from 'lang/index';
+import I18n from 'lang/main';
 import MainRouter from 'router/Sidebar';
 
 export default class TheHelloWordApp extends Component {

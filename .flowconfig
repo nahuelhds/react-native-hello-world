@@ -30,6 +30,11 @@
 ; Ignore react-native-fbads dependency of the expo sdk
 .*/node_modules/react-native-fbads/*
 
+; Ignore flow from node_modules
+.*node_modules/react-native-easy-grid/*
+.*node_modules/react-native-keyboard-aware-scroll-view/*
+.*node_modules/react-navigation/*
+
 [include]
 
 [libs]

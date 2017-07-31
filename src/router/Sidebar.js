@@ -17,7 +17,7 @@ import {
 } from "native-base"
 
 import lang from 'lang/index'
-import AboutMeRouter from 'router/AboutMe';
+import AboutMeRouter from 'router/AboutMe'
 import HomeScreen from "screen/Home"
 // import Profile from "./ProfileScreen/index";
 

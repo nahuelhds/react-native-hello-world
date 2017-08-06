@@ -25,6 +25,7 @@ type SocialLink = {
   user: string,
   url: string,
   logo: string,
+  color: color,
 }
 
 const fontAwesome = {
@@ -40,37 +41,43 @@ export default class SocialScreen extends React.Component {
         name: "Medium",
         user: "@nahuelhds",
         url: "https://medium.com/@nahuelhds",
-        logo: 'medium'
+        logo: 'medium',
+        color: 'seagreen',
       },
       {
         name: "Github",
         user: "@nahuelhds",
         url: "https://github.com/nahuelhds",
-        logo: 'github'
-      },
-      {
-        name: "Twitter",
-        user: "@nahuelhds",
-        url: "https://twitter.com/nahuelhds",
-        logo: 'twitter'
-      },
-      {
-        name: "Blog",
-        user: "nahuelhds.github.io",
-        url: "https://nahuelhds.github.io",
-        logo: 'rss'
+        logo: 'github',
+        color: 'black',
       },
       {
         name: "LinkedIn",
         user: "/nahuelhds",
         url: "https://www.linkedin.com/in/nahuelhds/",
-        logo: 'linkedin'
+        logo: 'linkedin',
+        color: 'royalblue',
+      },
+      {
+        name: "Blog",
+        user: "nahuelhds.github.io",
+        url: "https://nahuelhds.github.io",
+        logo: 'rss',
+        color: 'orangered',
+      },
+      {
+        name: "Twitter",
+        user: "@nahuelhds",
+        url: "https://twitter.com/nahuelhds",
+        logo: 'twitter',
+        color: 'dodgerblue',
       },
       {
         name: "Facebook",
         user: "/nahuelhds",
         url: "https://facebook.com/nahuelhds",
-        logo: 'facebook'
+        logo: 'facebook',
+        color: 'royalblue',
       }
     ]
 
@@ -94,7 +101,7 @@ export default class SocialScreen extends React.Component {
               <ListItem icon key={link.name}>
                 <Left>
                   <StyleProvider style={getTheme(fontAwesome)}>
-                    <Icon name={link.logo} />
+                    <Icon name={link.logo} style={css([{ color: link.color }, styles.logo])}/>
                   </StyleProvider>
                 </Left>
                 <Body>
@@ -119,5 +126,8 @@ const styles = StyleSheet.create({
   },
   flex2: {
     flex: 2
+  },
+  logo:{
+    fontSize: 24
   }
 })

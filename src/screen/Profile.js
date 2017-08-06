@@ -16,9 +16,9 @@ import {
   Text,
   Thumbnail,
   Title
-} from "native-base";
+} from 'native-base';
 
-import lang from "lang/main"
+import lang from 'lang/main'
 
 export default class ProfileScreen extends React.Component {
   render() {

@@ -138,6 +138,7 @@ export default StackNavigator({
   WebView: { screen: WebViewScreen }
 }, {
     headerMode: 'none',
+    // mode: 'modal', // Modal opens as... a modal
     cardStyle: {
       backgroundColor: '#ffffff'
     }

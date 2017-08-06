@@ -1,17 +1,20 @@
+// @flow
 import React from 'react';
-import { StyleSheet } from 'react-native'
+import { Image, StyleSheet } from 'react-native'
 import {
   Body,
   Button,
+  Card,
+  CardItem,
   Container,
+  Content,
   Header,
   Icon,
   Left,
   Right,
   Text,
   Thumbnail,
-  Title,
-  View
+  Title
 } from "native-base";
 
 import lang from "lang/main"
@@ -32,25 +35,31 @@ export default class ProfileScreen extends React.Component {
           </Body>
           <Right style={css(styles.flex)}></Right>
         </Header>
-        <View style={css([styles.flex, styles.vcenter])}>
-          <View style={css([styles.hcenter])} padder>
-            <Thumbnail large source={require("img/nahuelhds.jpeg")} />
-          </View>
-          <View style={css([styles.hcenter])}>
-            <View padder>
-              <Text style={css([styles.small, styles.textMuted])}>{lang.t('aboutme.title')}</Text>
-            </View>
-            <Text style={css(styles.heading, styles.textCenter)}>{lang.t('author.nickname')}</Text>
-            <View style={css([styles.hcenter])} padder>
-              <Text style={css([styles.lead])}>
-                {lang.t('author.role')}
-              </Text>
-              <Text style={css([styles.lead])}>
-                @ {lang.t('author.company')}
-              </Text>
-            </View>
-          </View>
-        </View>
+        <Content padder>
+          <Card>
+            <CardItem header>
+              <Left style={css(styles.flex2)}>
+                <Body>
+                  <Text style={css(styles.heading)}>{lang.t('author.nickname')}</Text>
+                  <Text>{lang.t('author.role')}</Text>
+                  <Text note>@ {lang.t('author.company')}</Text>
+                </Body>
+              </Left>
+              <Right style={css(styles.flex)}>
+                <Thumbnail large source={require("img/nahuelhds.jpeg")} />
+              </Right>
+            </CardItem>
+            <CardItem cardBody>
+              <Image
+                style={{ height: 100, width: null, flex: 1 }}
+                source={require('img/aboutme.jpeg')}
+              />
+            </CardItem>
+            <CardItem>
+              <Text>{lang.t('aboutme.description')}</Text>
+            </CardItem>
+          </Card>
+        </Content>
       </Container>
     );
   }
@@ -61,25 +70,10 @@ const styles = StyleSheet.create({
   flex: {
     flex: 1
   },
-  flex2:{
-    flex:2
-  },
-  hcenter: {
-    alignItems: "center"
-  },
-  vcenter: {
-    justifyContent: "center"
+  flex2: {
+    flex: 2
   },
   heading: {
     fontSize: 32
-  },
-  lead: {
-    fontSize: 20
-  },
-  textCenter: {
-    textAlign: 'center'
-  },
-  textMuted: {
-    color: '#888'
   }
 })

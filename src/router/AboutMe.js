@@ -16,14 +16,14 @@ import {
 import lang from "lang/main"
 
 import ProfileScreen from 'screen/Profile'
-import SkillsScreen from 'screen/Skills'
+import SocialScreen from 'screen/Social'
 
 const AboutMeRouter = TabNavigator({
   Profile: {
     screen: ProfileScreen
   },
-  Skills: {
-    screen: SkillsScreen
+  Social: {
+    screen: SocialScreen
   }
 }, {
     tabBarPosition: "bottom",
@@ -34,9 +34,9 @@ const AboutMeRouter = TabNavigator({
           icon: "person",
           route: "Profile",
         }, {
-          title: lang.t('Skills'),
-          icon: "code",
-          route: "Skills",
+          title: lang.t('Social'),
+          icon: "people",
+          route: "Social",
         }
       ]
       let i: number = 0

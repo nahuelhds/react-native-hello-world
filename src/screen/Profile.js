@@ -9,6 +9,7 @@ import {
   Container,
   Content,
   Header,
+  H1,
   Icon,
   Left,
   Right,
@@ -40,7 +41,7 @@ export default class ProfileScreen extends React.Component {
             <CardItem header>
               <Left style={css(styles.flex2)}>
                 <Body>
-                  <Text style={css(styles.heading)}>{lang.t('author.nickname')}</Text>
+                  <H1>{lang.t('author.nickname')}</H1>
                   <Text>{lang.t('author.role')}</Text>
                   <Text note>@ {lang.t('author.company')}</Text>
                 </Body>
@@ -72,8 +73,5 @@ const styles = StyleSheet.create({
   },
   flex2: {
     flex: 2
-  },
-  heading: {
-    fontSize: 32
   }
 })

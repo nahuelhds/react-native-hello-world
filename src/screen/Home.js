@@ -7,6 +7,7 @@ import {
 import {
   Button,
   Text,
+  H1,
   View
 } from 'native-base'
 
@@ -18,7 +19,7 @@ const screen = class HomeScreen extends React.Component {
       <View style={css([styles.flex, styles.vcenter])}>
         <View style={css([styles.flex2, styles.hcenter, styles.vend])}>
           <Image source={require("img/logo.png")} />
-          <Text style={css(styles.heading)}>{lang.t('app.name')}</Text>
+          <H1>{lang.t('app.name')}</H1>
         </View>
         <View style={css([styles.flex, styles.vend])}>
           <View padder>
@@ -51,9 +52,6 @@ const styles = StyleSheet.create({
   },
   vend: {
     justifyContent: 'flex-end'
-  },
-  heading: {
-    fontSize: 32
   },
   textCenter: {
     textAlign: 'center'

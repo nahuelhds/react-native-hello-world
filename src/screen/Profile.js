@@ -52,7 +52,7 @@ export default class ProfileScreen extends React.Component {
             <CardItem cardBody>
               <Image
                 style={{ height: 100, width: null, flex: 1 }}
-                source={require('img/aboutme.jpeg')}
+                source={require('img/aboutme.jpg')}
               />
             </CardItem>
             <CardItem>

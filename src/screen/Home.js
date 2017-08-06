@@ -1,7 +1,14 @@
 // @flow
 import React from 'react'
-import { StyleSheet } from 'react-native'
-import { Button, Text, Thumbnail, View } from 'native-base'
+import {
+  Image,
+  StyleSheet
+} from 'react-native'
+import {
+  Button,
+  Text,
+  View
+} from 'native-base'
 
 import lang from 'lang/main'
 
@@ -9,8 +16,8 @@ const screen = class HomeScreen extends React.Component {
   render() {
     return (
       <View style={css([styles.flex, styles.vcenter])}>
-        <View style={css([styles.flex, styles.hcenter, styles.vend])}>
-          <Thumbnail large source={require("img/logo.png")} />
+        <View style={css([styles.flex2, styles.hcenter, styles.vend])}>
+          <Image source={require("img/logo.png")} />
           <Text style={css(styles.heading)}>{lang.t('app.name')}</Text>
         </View>
         <View style={css([styles.flex, styles.vend])}>
@@ -33,7 +40,10 @@ const styles = StyleSheet.create({
   flex: {
     flex: 1,
   },
-  hcenter:{
+  flex2: {
+    flex: 2,
+  },
+  hcenter: {
     alignItems: "center"
   },
   vcenter: {

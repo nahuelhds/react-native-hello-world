@@ -11,7 +11,6 @@ import {
   Body,
   Button,
   Container,
-  Content,
   Header,
   Icon,
   Left,
@@ -19,7 +18,10 @@ import {
   Title,
 } from 'native-base'
 
-import lang from 'lang/main'
+type WebPage = {
+  title: string,
+  url: string,
+}
 
 export default class WebViewScreen extends React.Component {
   static navigationOptions = {
@@ -28,7 +30,8 @@ export default class WebViewScreen extends React.Component {
   }
 
   render() {
-    const { dispatch } = this.props.navigation;
+    const { dispatch, state } = this.props.navigation;
+    const page: WebPage = state.params
     const backAction = NavigationActions.back()
     return (
       <Container>
@@ -39,17 +42,15 @@ export default class WebViewScreen extends React.Component {
             </Button>
           </Left>
           <Body style={css(styles.flex2)}>
-            <Title>{lang.t('About me')}</Title>
+            <Title>{page.title}</Title>
           </Body>
           <Right style={css(styles.flex)}>
-            <Button transparent onPress={() => Linking.openURL('https://google.com')}>
-              <Icon name="share" />
+            <Button transparent onPress={() => Linking.openURL(page.url)}>
+              <Icon name="redo" />
             </Button>
           </Right>
         </Header>
-        <Content>
-          <WebView />
-        </Content>
+        <WebView startInLoadingState source={{ uri: page.url }} style={{flex:1}} />
       </Container>
     )
   }

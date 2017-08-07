@@ -23,7 +23,7 @@ import WebViewScreen from 'screen/WebView'
 import lang from "lang/main"
 
 type SocialLink = {
-  name: string,
+  title: string,
   user: string,
   url: string,
   logo: string,
@@ -38,42 +38,42 @@ class SocialScreen extends React.Component {
   static navigationOptions = () => {}
   socialLinks: Array<SocialLink> = [
     {
-      name: "Medium",
+      title: "Medium",
       user: "@nahuelhds",
       url: "https://medium.com/@nahuelhds",
       logo: 'medium',
       color: 'seagreen',
     },
     {
-      name: "Github",
-      user: "@nahuelhds",
-      url: "https://github.com/nahuelhds",
-      logo: 'github',
-      color: 'black',
-    },
-    {
-      name: "LinkedIn",
-      user: "/nahuelhds",
-      url: "https://www.linkedin.com/in/nahuelhds/",
-      logo: 'linkedin',
-      color: 'royalblue',
-    },
-    {
-      name: "Blog",
+      title: "Blog",
       user: "nahuelhds.github.io",
       url: "https://nahuelhds.github.io",
       logo: 'rss',
       color: 'orangered',
     },
     {
-      name: "Twitter",
+      title: "Github",
+      user: "@nahuelhds",
+      url: "https://github.com/nahuelhds",
+      logo: 'github',
+      color: 'black',
+    },
+    {
+      title: "LinkedIn",
+      user: "/nahuelhds",
+      url: "https://www.linkedin.com/in/nahuelhds/",
+      logo: 'linkedin',
+      color: 'royalblue',
+    },
+    {
+      title: "Twitter",
       user: "@nahuelhds",
       url: "https://twitter.com/nahuelhds",
       logo: 'twitter',
       color: 'dodgerblue',
     },
     {
-      name: "Facebook",
+      title: "Facebook",
       user: "/nahuelhds",
       url: "https://facebook.com/nahuelhds",
       logo: 'facebook',
@@ -99,14 +99,14 @@ class SocialScreen extends React.Component {
         <Content padder>
           <List>
             {this.socialLinks.map((link: SocialLink) =>
-              <ListItem icon key={link.name} onPress={() => navigate('WebView')}>
+              <ListItem icon key={link.title} onPress={() => navigate('WebView', link)}>
                 <Left>
                   <StyleProvider style={getTheme(fontAwesome)}>
                     <Icon name={link.logo} style={css([{ color: link.color }, styles.logo])} />
                   </StyleProvider>
                 </Left>
                 <Body>
-                  <Text>{link.name}</Text>
+                  <Text>{link.title}</Text>
                 </Body>
                 <Right>
                   <Text>{link.user}</Text>

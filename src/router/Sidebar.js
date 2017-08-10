@@ -17,8 +17,9 @@ import {
 } from "native-base"
 
 import lang from 'lang/main'
-import AboutMeRouter from 'router/AboutMe'
 import HomeScreen from "screen/Home"
+import AboutMeRouter from 'router/AboutMe'
+import ContactMeScreen from "screen/ContactMe"
 // import Profile from "./ProfileScreen/index";
 
 const Sidebar = DrawerNavigator({
@@ -27,6 +28,9 @@ const Sidebar = DrawerNavigator({
   },
   AboutMe: {
     screen: AboutMeRouter
+  },
+  ContactMe: {
+    screen: ContactMeScreen
   }
 }, {
     contentComponent: (props) => {
@@ -35,10 +39,16 @@ const Sidebar = DrawerNavigator({
           title: lang.t("Home"),
           icon: "home",
           route: "Home"
-        }, {
+        },
+        {
           title: lang.t("About me"),
           icon: "person",
           route: "AboutMe"
+        },
+        {
+          title: lang.t("Contact me"),
+          icon: "mail",
+          route: "ContactMe"
         }
       ];
       const renderRow = (item, arg, index) => {

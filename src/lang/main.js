@@ -10,7 +10,7 @@ I18n.fallbacks = true
 
 I18n.translations = {
   en: {
-    "app":{
+    "app": {
       "name": "The Hello World App",
     },
     "author": {
@@ -32,6 +32,17 @@ I18n.translations = {
     "aboutme": {
       "title": "This is me...",
       "description": "Meticulous. Perfectionist. In constant learning of edge technologies and project management strategies. I do my best for improving communication in my teams, with the focus on maximizing productivity and cohesion; minimizing time and costs."
+    },
+    "contactme": {
+      "title": "I wanna help!",
+      "description": "Need a hand with your project?"
+    },
+    "form": {
+      "label": {
+        "name": "What's your name?",
+        "email": "What's your email address?",
+        "message": "Leave me your message...",
+      },
     },
     "Where to find me": "Where to find me"
   },
@@ -58,6 +69,17 @@ I18n.translations = {
     "aboutme": {
       "title": "Este soy yo...",
       "description": "Meticuloso. Perfeccionista. En el aprendizaje constante de tecnologías de punta y estrategias de gestión de proyectos. Hago todo lo posible para mejorar la comunicación en mis equipos, con el foco en la maximización de la productividad y la cohesión; minimizando tiempo y costes."
+    },
+    "contactme": {
+      "title": "¡Quiero ayudarte!",
+      "description": "¿Precisás una mano con tu proyecto?"
+    },
+    "form": {
+      "label": {
+        "name": "¿Cómo te llamás?",
+        "email": "¿Cuál es tu correo electrónico?",
+        "message": "Dejame tu mensaje...",
+      },
     },
     "Where to find me": "Dónde encontrarme"
   }

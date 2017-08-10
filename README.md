@@ -58,6 +58,26 @@ What does they mean?
 
 If you do modifications to Babel config `.babelrc`, then you need to clear the packager cache and then restart the project.
 
+### Theme variables
+
+The theme variables at accesible at `/native-base-theme/variables/platform.js`. The NativeBase Theme is available at `theme` alias.
+So, in order to access them inside the code you must import it like this:
+
+```js
+import Theme from 'theme/variables/platform'
+
+// Now I can use the theme variables
+// For instance, the colors
+Theme.brandPrimary; // platform === "ios" ? "#007aff" : "#3F51B5",
+Theme.brandInfo; // "#62B1F6",
+Theme.brandSuccess; // "#5cb85c",
+Theme.brandDanger; // "#d9534f",
+Theme.brandWarning; // "#f0ad4e",
+Theme.brandSidebar; // "#252932",
+```
+
+You can even customize the theme if you want to.
+
 ## Debugging
 
 > **Tip:** Remote debugging works best with Live reload. Hot reloading gives too much troubles and RSOF (Red Screen of Death).

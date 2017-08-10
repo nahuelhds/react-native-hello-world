@@ -1,5 +1,6 @@
 .expo/
 .vscode/*
 !.vscode/settings.json
+native-base-theme
 node_modules/
 npm-debug.*

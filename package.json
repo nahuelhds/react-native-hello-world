@@ -19,6 +19,7 @@
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
+    "postinstall": "node node_modules/native-base/ejectTheme.js",
     "flow": "flow",
     "start": "react-native start --port 19001 --root .vscode --assetExts ttf",
     "eject": "react-native-scripts eject",

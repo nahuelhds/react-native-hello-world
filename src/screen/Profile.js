@@ -3,39 +3,29 @@ import React from 'react';
 import { Image, StyleSheet } from 'react-native'
 import {
   Body,
-  Button,
   Card,
   CardItem,
   Container,
   Content,
-  Header,
   H1,
-  Icon,
   Left,
   Right,
   Text,
   Thumbnail,
-  Title
 } from 'native-base';
+
+import DrawerHeader from 'component/DrawerHeader';
 
 import lang from 'lang/main'
 
 export default class ProfileScreen extends React.Component {
   render() {
-    const { navigate } = this.props.navigation;
     return (
       <Container>
-        <Header>
-          <Left style={css(styles.flex)}>
-            <Button transparent onPress={() => navigate("DrawerOpen")}>
-              <Icon name="menu" />
-            </Button>
-          </Left>
-          <Body style={css(styles.flex2)}>
-            <Title>{lang.t('About me')}</Title>
-          </Body>
-          <Right style={css(styles.flex)}></Right>
-        </Header>
+        <DrawerHeader
+          title={lang.t('About me')}
+          onPress={() => this.props.navigation.navigate("DrawerOpen")}
+        ></DrawerHeader>
         <Content padder>
           <Card>
             <CardItem header>

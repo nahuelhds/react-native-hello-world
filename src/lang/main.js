@@ -41,7 +41,7 @@ I18n.translations = {
       "label": {
         "name": "What's your name?",
         "email": "What's your email address?",
-        "message": "Leave me your message...",
+        "message": "What can I do for you?",
       },
     },
     "Where to find me": "Where to find me"
@@ -78,7 +78,7 @@ I18n.translations = {
       "label": {
         "name": "¿Cómo te llamás?",
         "email": "¿Cuál es tu correo electrónico?",
-        "message": "Dejame tu mensaje...",
+        "message": "¿En qué puedo ayudarte?",
       },
     },
     "Where to find me": "Dónde encontrarme"

@@ -2,6 +2,7 @@
 import React from 'react';
 import { StyleSheet } from 'react-native'
 import {
+  Button,
   Container,
   Content,
   Text,
@@ -37,7 +38,7 @@ export default class ContactMeScreen extends React.Component {
             <Item floatingLabel>
               <Label>{lang.t('form.label.name')}</Label>
               <Input
-                autoFocus="true"
+                // autoFocus="true"
                 getRef={(component) => { this.textInput = component; }}
                 onSubmitEditing={() => { this.emailInput._root.focus(); }}
               />
@@ -54,22 +55,15 @@ export default class ContactMeScreen extends React.Component {
             <Item floatingLabel>
               <Label>{lang.t('form.label.message')}</Label>
               <Input
-                multiline={true}
-                style={css(styles.textArea)}
                 getRef={(component) => { this.messageInput = component; }}
               />
             </Item>
           </Form>
         </View>
       </Content>
+      <Button full success>
+        <Text>{lang.t('form.send')}</Text>
+      </Button>
     </Container>
   }
 }
-
-const css = StyleSheet.flatten
-const styles = StyleSheet.create({
-  textArea: {
-    marginTop: 20,
-    marginBottom: 20,
-  }
-});

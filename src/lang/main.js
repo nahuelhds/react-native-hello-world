@@ -43,6 +43,7 @@ I18n.translations = {
         "email": "What's your email address?",
         "message": "What can I do for you?",
       },
+      "send": "Send",
     },
     "Where to find me": "Where to find me"
   },
@@ -80,6 +81,7 @@ I18n.translations = {
         "email": "¿Cuál es tu correo electrónico?",
         "message": "¿En qué puedo ayudarte?",
       },
+      "send": "Enviar"
     },
     "Where to find me": "Dónde encontrarme"
   }

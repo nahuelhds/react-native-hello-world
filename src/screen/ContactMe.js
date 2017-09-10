@@ -12,13 +12,15 @@ import {
   Item,
   Label,
   Input,
+  Toast,
   View,
 } from 'native-base';
 
 import Theme from 'theme/variables/platform'
-
-import DrawerHeader from 'component/DrawerHeader';
+import DrawerHeader from 'component/DrawerHeader'
 import lang from 'lang/main'
+import EmailClient from 'service/EmailClient'
+import type { EmailUserData } from 'service/EmailClient'
 
 type Props = {}
 
@@ -26,8 +28,9 @@ type State = {
   name: String,
   email: String,
   message: String,
+  loading: Boolean,
   errors: { [String]: Boolean }
-};
+}
 
 export default class ContactMeScreen extends React.Component<Props, State> {
   // Estado inicial
@@ -35,11 +38,24 @@ export default class ContactMeScreen extends React.Component<Props, State> {
     name: '',
     email: '',
     message: '',
+    loading: false,
     errors: {
       name: false,
       email: false,
       message: false,
     }
+  }
+
+  // Refs
+  nameInput: any;
+  emailInput: any;
+  messageInput: any;
+
+  // Reglas de validacion
+  rules = {
+    name: /\w+/i,
+    email: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+    message: /\w+/i,
   }
 
   render() {
@@ -55,7 +71,7 @@ export default class ContactMeScreen extends React.Component<Props, State> {
     // false inhabilita el boton de envio
     // true lo habilita
     const formValidation = {
-      disabled: !this.isValid()
+      disabled: !this.isValid() || this.state.loading
     }
 
     return <Container>
@@ -77,6 +93,7 @@ export default class ContactMeScreen extends React.Component<Props, State> {
               {/* Al cambiar el estado, actualizo el estado */}
               {/* Y al presionar enter, envio el foco al proximo campo */}
               <Input
+                getRef={(component) => this.nameInput = component}
                 onChangeText={(text) => this.setValue('name', text)}
                 onSubmitEditing={() => this.emailInput._root.focus()}
               />
@@ -106,7 +123,7 @@ export default class ContactMeScreen extends React.Component<Props, State> {
         <Text note style={css(styles.textCenter)}>{lang.t('form.helpText')}</Text>
       </View>
       <Button full success {...formValidation} onPress={() => this.submit()}>
-        <Text>{lang.t('form.send')}</Text>
+        <Text>{lang.t(this.state.loading ? 'form.sending' : 'form.send')}</Text>
       </Button>
     </Container>
   }
@@ -116,15 +133,48 @@ export default class ContactMeScreen extends React.Component<Props, State> {
    *
    * @memberof ContactMeScreen
    */
-  submit() {
-    Alert.alert('¡Gracias por contactarte conmigo!')
+  async submit() {
+    this.setState({ loading: true })
+    const data: EmailUserData = {
+      email: this.state.email,
+      name: this.state.name,
+      message: this.state.message
+    };
+
+    // Envio el mail
+    let res = await EmailClient.message(data)
+    // Si hubo algun error...
+    if (res.err) {
+      Alert.alert(lang.t('form.sentError', { error: res.err }))
+      return false
+    }
+
+    this.setState({ loading: false })
+
+    // Reinicio el estado y alerto el exito
+    this.resetForm()
+    Toast.show({
+      text: lang.t('form.toast'),
+      position: 'bottom',
+      buttonText: 'OK'
+    })
+    return true
   }
 
-  // Reglas de validacion
-  rules = {
-    name: /\w+/i,
-    email: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-    message: /\w+/i,
+  /**
+   * Reinicia los textos del formulario y el estado de cada campo
+   *
+   * @memberof ContactMeScreen
+   */
+  resetForm() {
+    this.setState({
+      'name': '',
+      'email': '',
+      'message': '',
+    })
+    this.nameInput._root.clear()
+    this.emailInput._root.clear()
+    this.messageInput._root.clear()
   }
 
   /**

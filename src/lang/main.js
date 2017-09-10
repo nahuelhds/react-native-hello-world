@@ -37,6 +37,11 @@ I18n.translations = {
       "title": "I wanna help!",
       "description": "Need a hand with your project?"
     },
+    "email": {
+      "subject": "React Native Hello World - New contact",
+      "title": "{{name}} has just contatcted within the app",
+      "description": `His/her email is {{email}} and he/she left the following message: "{{message}}"`
+    },
     "form": {
       "label": {
         "name": "What's your name?",
@@ -45,6 +50,9 @@ I18n.translations = {
       },
       "helpText": "Complete the fields to enable the submission",
       "send": "Send",
+      "sending": "Sending...",
+      "toast": "¡Thanks for reaching to me!\nI'll contact you as soon as I can.",
+      "sentError": "Do'h! Something wrong happened!\n{{error}}",
     },
     "Where to find me": "Where to find me"
   },
@@ -76,6 +84,11 @@ I18n.translations = {
       "title": "¡Quiero ayudarte!",
       "description": "¿Precisás una mano con tu proyecto?"
     },
+    "email": {
+      "subject": "React Native Hello World - Nuevo contacto",
+      "title": "{{name}} se ha contactado por mediante la app",
+      "description": `Su correo de contacto es {{email}} y dejó el siguiente mensaje: "{{message}}"`
+    },
     "form": {
       "label": {
         "name": "¿Cómo te llamás?",
@@ -83,7 +96,10 @@ I18n.translations = {
         "message": "¿En qué puedo ayudarte?",
       },
       "helpText": "Completá los campos para habilitar el envío",
-      "send": "Enviar"
+      "send": "Enviar",
+      "sending": "Enviando...",
+      "toast": "¡Gracias por tu mensaje!\nMe contactaré a la brevedad",
+      "sentError": "¡Ups! ¡Ha ocurrido un problema!\n{{error}}",
     },
     "Where to find me": "Dónde encontrarme"
   }

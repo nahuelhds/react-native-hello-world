@@ -1,10 +1,11 @@
 // @flow
-import React from 'react';
-import { Image } from 'react-native';
-import Expo from 'expo';
+import React from 'react'
+import { Image } from 'react-native'
+import { Root } from 'native-base'
+import Expo from 'expo'
 
-import I18n from 'lang/main';
-import MainRouter from 'router/Sidebar';
+import I18n from 'lang/main'
+import MainRouter from 'router/Sidebar'
 
 function cacheImages(images) {
   return images.map(image => {
@@ -40,7 +41,7 @@ export default class TheHelloWordApp extends React.Component {
     if (!this.state.isReady) {
       return <Expo.AppLoading />
     }
-    return <MainRouter />
+    return <Root><MainRouter /></Root>
   }
 
   async _loadAsync() {

@@ -3,4 +3,5 @@
 !.vscode/settings.json
 native-base-theme
 node_modules/
+src/config/env.js
 npm-debug.*

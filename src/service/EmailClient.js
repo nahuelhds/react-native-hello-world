@@ -1,9 +1,7 @@
 // @flow
 import Frisbee from 'frisbee'
 import lang from 'lang/main'
-
-const API_KEY: String = "key-740bf9828d2bf1134090e6b3f5cd2f74";
-const DOMAIN: String = "sandbox965964606d6d4762bd42d5e5d187e425.mailgun.org";
+import MAILGUN from 'config/env'
 
 export type EmailUserData = {
   email: String,
@@ -24,17 +22,17 @@ class EmailClient {
 
   constructor() {
     this.api = new Frisbee({
-      baseURI: `https://api.mailgun.net/v3/${DOMAIN}`,
+      baseURI: `https://api.mailgun.net/v3/${MAILGUN.DOMAIN}`,
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
-      auth: ['api', API_KEY],
+      auth: ['api', MAILGUN.API_KEY],
     });
   }
 
   message(data: EmailUserData) {
     const message: EmailMessage = {
-      from: `React Native Hello World <mailgun@${DOMAIN}>`,
+      from: `React Native Hello World <mailgun@${MAILGUN.DOMAIN}>`,
       to: "nsotelo@cristalmedia.net",
       subject: lang.t('email.subject'),
       html: '<h2>' + lang.t('email.title', data) + '</h2><p>' + lang.t('email.description', data) + '</p>',

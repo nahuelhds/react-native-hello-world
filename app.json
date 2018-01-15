@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "The Hello World App",
-    "slug": "the-hello-world-app",
+    "name": "React Native Labs",
+    "slug": "react-native-labs",
     "sdkVersion": "18.0.0",
     "packagerOpts": {
       "assetExts": [
